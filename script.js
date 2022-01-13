@@ -77,7 +77,16 @@ function clickDay() {
             timeLine.style = "unset";
             timeNum.style = "unset";
         
-    });
+        });
+        timeNum.addEventListener("mouseenter", function() {
+            timeLine.style = stylesLine;
+            timeNum.style = stylesNum;
+        });
+        timeNum.addEventListener("mouseleave", function() {
+            timeLine.style = "unset";
+            timeNum.style = "unset";
+        
+        });
 }}
 
 
