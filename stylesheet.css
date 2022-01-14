@@ -124,6 +124,9 @@ body, html {
 }
 
 .hourLinesText {
+    border-width: unset;
+    border-style: unset;
+    border-image: unset;
     position: relative;
     margin: 0;
     left: 1vw;
@@ -131,12 +134,13 @@ body, html {
     font-size: 3vh;
     font-weight: 300;
     color: rgb(0, 0, 0);
-    height: 6vh;
+    max-height: 6vh;
     border-bottom-style: solid;
     border-bottom-width: 0.1vw;
-    
+    background-color: transparent;
     border-color: black;
 }
+
 
 .add {
     display: block;
