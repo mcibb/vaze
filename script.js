@@ -47,18 +47,13 @@ let months = document.querySelectorAll(".month");
 
 
 
-function addRemove() {
 
-
-
-
-}
 
 
 
 
 //add click listener to all hourLines, to add or remove activity
-function clickDay() {
+function hoverDay() {
 
     let lines = document.querySelectorAll(".hourLinesText");
 
@@ -66,28 +61,37 @@ function clickDay() {
 
         let timeLine = lines[i];
         let timeNum = lines[i-1];
-
+        
         const stylesLine = "cursor: pointer; background-color: #b8c6db; background-image: linear-gradient(315deg, #b8c6db 0%, #f5f7fa 30%);";
         const stylesNum = "cursor: pointer; background-color: #b8c6db; background-image: linear-gradient(290deg, #f5f7fa 20%, #b8c6db 100%);";
+        
         timeLine.addEventListener("mouseenter", function() {
             timeLine.style = stylesLine;
             timeNum.style = stylesNum;
+            timeLine.innerHTML = "<img src='plus.png' alt='Add' class='add'></img>";
+            
         });
         timeLine.addEventListener("mouseleave", function() {
             timeLine.style = "unset";
             timeNum.style = "unset";
-        
+            timeLine.innerHTML = "";
+            
         });
         timeNum.addEventListener("mouseenter", function() {
             timeLine.style = stylesLine;
             timeNum.style = stylesNum;
+            timeLine.innerHTML = "<img src='plus.png' alt='Add' class='add'></img>";
+            
         });
         timeNum.addEventListener("mouseleave", function() {
             timeLine.style = "unset";
             timeNum.style = "unset";
+            timeLine.innerHTML = "";
+            
         
         });
 }}
+
 
 
 //function to insert date, hours and close button into #dayPanel, then display it
@@ -98,11 +102,13 @@ function dayPanelCreate(i, k) {
     dayPanel.innerHTML += "<div id='hourLines'></div>";
     let hourLines = document.querySelector("#hourLines");
     for (i = 8; i < 20; i++) {
-        hourLines.innerHTML += "<p class='hourLinesText' style='max-width: 5vw'>" + i + ":⁰⁰</p>";
-        hourLines.innerHTML += "<p class='hourLinesText' style='max-width: 50vw'></p>";
+        hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 5vw'>" + i + ":⁰⁰</div>";
+        hourLines.innerHTML += "<div class='hourLinesText' style='max-width: 50vw'></div>";
         
+        //div class='add'></div><div class='remove'></div>
+   
     }    
-    clickDay();
+    hoverDay();
     
 
     dayPanel.style.display = "grid";
