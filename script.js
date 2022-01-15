@@ -1,9 +1,9 @@
-var xhr = new XMLHttpRequest();
-xhr.open("GET", "http://127.0.0.1:5500/activities.json", true);
-xhr.onload = function(){
-    console.log(xhr.responseText);
-};
-xhr.send();
+fetch('https://mcibb.github.io/vaze/activities.json')
+  .then(res => res.json())
+  .then(json => {
+      console.log(JSON.stringify(json));
+    //json vaiable contains object with data
+  })
 
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
