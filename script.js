@@ -1,3 +1,10 @@
+var xhr = new XMLHttpRequest();
+xhr.open("GET", "http://127.0.0.1:5500/activities.json", true);
+xhr.onload = function(){
+    console.log(xhr.responseText);
+};
+xhr.send();
+
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
 var startFeb = new Date(2022, 1, 1);
