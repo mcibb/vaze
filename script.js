@@ -1,9 +1,23 @@
+
+/*
 fetch('https://mcibb.github.io/vaze/activities.json')
   .then(res => res.json())
-  .then(json => {
-      console.log(JSON.stringify(json));
+  .then(data => {
+      console.log(JSON.stringify(data));
+      let all = JSON.stringify(data);
+      console.log(data["in"]);
     //json vaiable contains object with data
   })
+*/
+
+const url = 'https://vazeapi.herokuapp.com/all';
+
+
+
+fetch(url)
+    .then(response => response.json())
+    .then(data => console.log(data));
+
 
 var startJan = new Date(2022, 0, 1);
 var endJan = new Date(2022, 0, 31);
